@@ -32,5 +32,7 @@ func main() {
 	}
 	defer s.Close()
 
+	log.Println("Connection opened, listening for commands")
+
 	select {}
 }
