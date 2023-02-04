@@ -1,0 +1,23 @@
+name: Update application commands
+
+on:
+  push:
+    branches: [ "main" ]
+    paths: [ "commands.json" ]
+
+  workflow_dispatch:
+
+
+jobs:
+
+  update-commands:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Send new commands to Discord API
+        run: |
+          curl -X PUT https://discord.com/api/v10/applications/${{ secrets.DISCORD_APPLICATION_ID }}/commands \
+            -H "Authorization: Bot ${{ secrets.DISCORD_BOT_TOKEN }}" \
+            -d @commands.json
+ 
