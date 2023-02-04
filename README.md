@@ -1,0 +1,2 @@
+# botson
+Utility Discord bot
