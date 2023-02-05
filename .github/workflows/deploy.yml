@@ -23,6 +23,7 @@ jobs:
 
   build:
     runs-on: ubuntu-latest
+    needs: test
 
     steps:
       - uses: actions/checkout@v3
@@ -44,6 +45,7 @@ jobs:
 
   deploy:
     runs-on: ubuntu-latest
+    needs: build
 
     steps:
       - uses: azure/k8s-set-context@v3
@@ -54,5 +56,6 @@ jobs:
       - uses: Azure/k8s-deploy@v4
         with:
           namespace: botson
-          manifests: k8s/
+          manifests: |
+            k8s
           images: southcity/botson:${{ github.sha }}
