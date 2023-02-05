@@ -18,5 +18,5 @@ spec:
         - name: botson
           image: ssouthcity/botson:latest
           envFrom:
-            secretRef:
-              name: botson-discord-secrets-td2h64g9bm
+            - secretRef:
+                name: botson-discord-secrets-td2h64g9bm
