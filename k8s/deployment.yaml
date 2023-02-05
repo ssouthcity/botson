@@ -16,4 +16,4 @@ spec:
     spec:
       containers:
         - name: botson
-          image: ssouthcity/botson:f67875d5ea85cf3c26f3ac8ba75d8f5ef6f9a79e
+          image: ssouthcity/botson:3c5ad3f5872f2083a5e289d6b2f7f3c08252b742

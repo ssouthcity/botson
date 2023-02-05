@@ -20,7 +20,7 @@ func main() {
 		case "ping":
 			s.InteractionRespond(i.Interaction, &discordgo.InteractionResponse{
 				Type: discordgo.InteractionResponseChannelMessageWithSource,
-				Data: &discordgo.InteractionResponseData{Content: "pong!"},
+				Data: &discordgo.InteractionResponseData{Content: "pøng!"},
 			})
 		default:
 			log.Printf("Received unknown command %s", data.Name)
