@@ -10,7 +10,7 @@ import (
 func main() {
 	s, err := discordgo.New("Bot " + os.Getenv("DISCORD_BOT_TOKEN"))
 	if err != nil {
-		log.Printf("Invalid authentication scheme format %v\n", err)
+		log.Fatalf("Invalid authentication scheme format %v\n", err)
 	}
 
 	s.AddHandler(func(s *discordgo.Session, i *discordgo.InteractionCreate) {
@@ -28,7 +28,7 @@ func main() {
 	})
 
 	if err := s.Open(); err != nil {
-		log.Printf("Unable to connect to Discord %v\n", err)
+		log.Fatalf("Unable to connect to Discord %v\n", err)
 	}
 	defer s.Close()
 
