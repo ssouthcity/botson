@@ -39,5 +39,6 @@ jobs:
         
     - uses: docker/build-push-action@v4
       with:
+        platforms: linux/amd64,linux/arm64
         push: true
         tags: ssouthcity/botson:${{ github.sha }},ssouthcity/botson:latest
