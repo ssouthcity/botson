@@ -48,6 +48,8 @@ jobs:
     needs: build
 
     steps:
+      - uses: actions/checkout@v3
+
       - uses: azure/k8s-set-context@v3
         with:
           method: kubeconfig
@@ -56,6 +58,5 @@ jobs:
       - uses: Azure/k8s-deploy@v4
         with:
           namespace: botson
-          manifests: |
-            k8s
+          manifests: k8s
           images: southcity/botson:${{ github.sha }}
