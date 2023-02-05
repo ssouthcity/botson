@@ -16,4 +16,7 @@ spec:
     spec:
       containers:
         - name: botson
-          image: ssouthcity/botson:3c5ad3f5872f2083a5e289d6b2f7f3c08252b742
+          image: ssouthcity/botson:latest
+          envFrom:
+            secretRef:
+              name: botson-discord-secrets-td2h64g9bm
